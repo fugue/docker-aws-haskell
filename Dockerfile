@@ -1,14 +1,18 @@
 FROM amazonlinux:latest
 MAINTAINER Jasper Van der Jeugt <jasper@fugue.co>
+ARG STACK_RESOLVER
 
 ## Install stack.
 RUN yum install -y curl gcc gmp-devel make tar gzip xz zlib-devel zip
 RUN curl -sSL https://get.haskellstack.org/ | sh
 
 ## Share a stack root among users.
-RUN mkdir /var/stack
-RUN chmod 777 /var/stack
-ENV STACK_ROOT="/var/stack"
+ENV STACK_ROOT="/var/lib/stack"
+RUN mkdir "$STACK_ROOT"
 
-## Start build?
-RUN stack install --resolver lts-13.0 containers
+## Start build
+COPY preinstall-haskell-packages /usr/local/bin/preinstall-haskell-packages
+RUN preinstall-haskell-packages
+
+## Make writable for other users.
+RUN chmod -R a+rw "$STACK_ROOT"
