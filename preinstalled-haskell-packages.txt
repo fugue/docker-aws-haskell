@@ -16,7 +16,6 @@ lens
 mtl
 optparse-applicative
 parsec
-pcre-simple
 psqueues
 scientific
 text
