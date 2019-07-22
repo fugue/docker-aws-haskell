@@ -1,5 +1,0 @@
-#!/bin/bash
-set -o nounset -o errexit -o pipefail
-
-stack --resolver "$STACK_RESOLVER" install \
-    lens
