@@ -1,6 +1,10 @@
+Diff
+Glob
 aeson
+aeson-pretty
 annotated-wl-pprint
 ansi-terminal
+async
 base
 binary
 blaze-html
@@ -8,7 +12,6 @@ bytestring
 containers
 directory
 filepath
-Glob
 hashable
 haskeline
 indents
@@ -16,8 +19,11 @@ lens
 mtl
 optparse-applicative
 parsec
+process
 psqueues
 scientific
+tasty
+tasty-hunit
 text
 time
 timerep
