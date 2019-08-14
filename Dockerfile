@@ -6,11 +6,13 @@ ARG STACK_RESOLVER
 RUN yum install -y \
     curl \
     gcc \
+    git \
     gmp-devel \
     gzip \
     make \
     ncurses-compat-libs \
     ncurses-devel \
+    ssh \
     tar \
     xz \
     zip \
