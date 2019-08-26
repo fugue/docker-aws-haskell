@@ -2,7 +2,7 @@ FROM amazonlinux:latest
 MAINTAINER Jasper Van der Jeugt <jasper@fugue.co>
 ARG STACK_RESOLVER
 
-## Install stack dependencies and stack.
+## Install stack, stack dependencies, python tooling.
 RUN yum install -y \
     curl \
     gcc \
@@ -12,12 +12,16 @@ RUN yum install -y \
     make \
     ncurses-compat-libs \
     ncurses-devel \
+    python3-pip \
     ssh \
     tar \
+    unzip \
     xz \
     zip \
     zlib-devel; \
-    curl -sSL https://get.haskellstack.org/ | sh
+    curl -sSL https://get.haskellstack.org/ | sh; \
+    ln -sf /usr/bin/python3 /usr/bin/python; \
+    ln -sf /usr/bin/pip3 /usr/bin/pip;
 
 ## Share a stack root among users.
 ENV STACK_ROOT="/var/lib/stack"
