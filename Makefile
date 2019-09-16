@@ -1,10 +1,11 @@
-STACK_RESOLVER=lts-13.0
+STACK_RESOLVER=lts-14.6
+IMAGE_VERSION=0.0.1
 
 .PHONY: build
 build:
-	docker build -m 4GB -t fugue2/aws-haskell \
+	docker build -m 4GB -t fugue2/aws-haskell:${IMAGE_VERSION} \
 		--build-arg STACK_RESOLVER=${STACK_RESOLVER} .
 
 .PHONY: deploy
 deploy:
-	docker push fugue2/aws-haskell
+	docker push fugue2/aws-haskell:${IMAGE_VERSION}

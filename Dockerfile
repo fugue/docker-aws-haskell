@@ -18,10 +18,14 @@ RUN yum install -y \
     unzip \
     xz \
     zip \
-    zlib-devel; \
-    curl -sSL https://get.haskellstack.org/ | sh; \
-    ln -sf /usr/bin/python3 /usr/bin/python; \
+    zlib-devel;
+
+## Link python versions.
+RUN ln -sf /usr/bin/python3 /usr/bin/python; \
     ln -sf /usr/bin/pip3 /usr/bin/pip;
+
+## Install stack.
+RUN curl -sSL https://get.haskellstack.org/ | sh;
 
 ## Share a stack root among users.
 ENV STACK_ROOT="/var/lib/stack"
