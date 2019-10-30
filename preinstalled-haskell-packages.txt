@@ -12,6 +12,7 @@ bytestring
 containers
 directory
 filepath
+fsnotify
 hashable
 haskeline
 indents
