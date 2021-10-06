@@ -21,7 +21,7 @@ hashable
 haskeline
 HsYAML
 indents
-jose-0.8.3
+jose
 lens
 mtl
 optparse-applicative
@@ -36,7 +36,7 @@ text
 time
 timerep
 unordered-containers
-vector
+vector-0.12.2.0
 vector-instances
 x509
 yaml
